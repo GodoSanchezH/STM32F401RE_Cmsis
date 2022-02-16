@@ -1,0 +1,22 @@
+12:18:00 **** Incremental Build of configuration Debug for project Projecto0_Plantilla ****
+make -j2 all 
+arm-none-eabi-gcc -o "Projecto0_Plantilla.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto0_Plantilla\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto0_Plantilla.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto0_Plantilla.elf
+ 
+arm-none-eabi-size   Projecto0_Plantilla.elf 
+arm-none-eabi-objdump -h -S  Projecto0_Plantilla.elf  > "Projecto0_Plantilla.list"
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	Projecto0_Plantilla.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto0_Plantilla.elf  "Projecto0_Plantilla.hex"
+Finished building: Projecto0_Plantilla.list
+ 
+arm-none-eabi-objcopy  -O binary  Projecto0_Plantilla.elf  "Projecto0_Plantilla.bin"
+Finished building: Projecto0_Plantilla.hex
+ 
+Finished building: Projecto0_Plantilla.bin
+ 
+
+12:18:02 Build Finished. 0 errors, 0 warnings. (took 1s.396ms)
+
