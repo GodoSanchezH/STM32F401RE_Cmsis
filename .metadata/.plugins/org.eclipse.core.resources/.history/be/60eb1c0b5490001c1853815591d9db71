@@ -1,0 +1,24 @@
+/*
+ * Clock_Config.h
+ *
+ *  Created on: 17 feb. 2022
+ *      Author: LENOVO
+ */
+
+#ifndef INC_CLOCK_CONFIG_H_
+#define INC_CLOCK_CONFIG_H_
+
+
+#include "stm32f401xe.h"
+//definimos las macros para los pll
+
+#define PLL_M	84
+#define PLL_N	0 // Valor 2
+#define PLL_P	4
+
+
+//definimos Funcion
+
+void Init_Clock(void);
+
+#endif /* INC_CLOCK_CONFIG_H_ */

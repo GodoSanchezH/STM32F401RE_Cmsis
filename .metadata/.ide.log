@@ -299,3 +299,19 @@
 2022-02-16 12:08:53,895 [INFO] ApiDb:280 - User favorites MCUs=[STM32F103C8Tx]
 2022-02-16 12:08:53,898 [INFO] ApiDb:276 - Save user favorites file C:\Users\LENOVO/.stm32cubeide/favorites.boards.txt: 3 item(s)
 2022-02-16 12:08:53,899 [INFO] ApiDb:280 - User favorites Boards=[B-L072Z-LRWAN1, NUCLEO-F401RE, NUCLEO-L412KB]
+2022-02-17 18:54:45,536 [INFO] Activator:177 - 
+
+
+2022-02-17 18:54:45,559 [INFO] Activator:178 - !SESSION log4j initialized
+2022-02-17 18:54:49,458 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2022-02-17 18:54:49,464 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2022-02-17 18:54:49,508 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2022-02-17 18:55:14,478 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-02-17 21:06:11,983 [INFO] Activator:177 - 
+
+
+2022-02-17 21:06:11,987 [INFO] Activator:178 - !SESSION log4j initialized
+2022-02-17 21:06:13,453 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2022-02-17 21:06:13,459 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2022-02-17 21:06:13,483 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Managed Build system manifest file error: Could not load icon "icons/chip.png".
+2022-02-17 21:06:32,092 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com

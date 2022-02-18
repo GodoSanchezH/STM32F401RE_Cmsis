@@ -5,14 +5,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/Clock_Config.c \
 ../Core/Src/main.c \
 ../Core/Src/system_stm32f4xx.c 
 
 OBJS += \
+./Core/Src/Clock_Config.o \
 ./Core/Src/main.o \
 ./Core/Src/system_stm32f4xx.o 
 
 C_DEPS += \
+./Core/Src/Clock_Config.d \
 ./Core/Src/main.d \
 ./Core/Src/system_stm32f4xx.d 
 
@@ -24,7 +27,7 @@ Core/Src/%.o: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o
+	-$(RM) ./Core/Src/Clock_Config.d ./Core/Src/Clock_Config.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o
 
 .PHONY: clean-Core-2f-Src
 

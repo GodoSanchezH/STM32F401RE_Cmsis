@@ -1,0 +1,19 @@
+/*
+ * Clock_Config.c
+ *
+ *  Created on: 17 feb. 2022
+ *      Author: LENOVO
+ */
+
+#include "Clock_Config.h"
+
+
+
+void Init_Clock(void){
+
+RCC->PLLCFGR &= ~(RCC_PLLCFGR_PLLM); //Limpiamos el Registro del Clok
+
+RCC->PLLCFGR  |= PLL_M | (PLL_N<<6) | (PLL_P<<16);//Cargamos los valores de nuestro PLL
+
+
+}

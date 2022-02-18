@@ -1,24 +1,10 @@
-12:20:06 **** Build of configuration Debug for project Projecto1_GPIO_Output ****
+23:12:21 **** Incremental Build of configuration Debug for project Projecto1_GPIO_Output ****
 make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto1_GPIO_Output/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto1_GPIO_Output/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto1_GPIO_Output/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto1_GPIO_Output/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
-arm-none-eabi-gcc -o "Projecto1_GPIO_Output.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto1_GPIO_Output\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto1_GPIO_Output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Projecto1_GPIO_Output.elf
- 
 arm-none-eabi-size   Projecto1_GPIO_Output.elf 
-arm-none-eabi-objdump -h -S  Projecto1_GPIO_Output.elf  > "Projecto1_GPIO_Output.list"
    text	   data	    bss	    dec	    hex	filename
-    692	      8	   1568	   2268	    8dc	Projecto1_GPIO_Output.elf
+   1172	      8	   1568	   2748	    abc	Projecto1_GPIO_Output.elf
 Finished building: default.size.stdout
-Finished building: Projecto1_GPIO_Output.list
- 
- 
-arm-none-eabi-objcopy  -O ihex  Projecto1_GPIO_Output.elf  "Projecto1_GPIO_Output.hex"
-arm-none-eabi-objcopy  -O binary  Projecto1_GPIO_Output.elf  "Projecto1_GPIO_Output.bin"
-Finished building: Projecto1_GPIO_Output.bin
- 
-Finished building: Projecto1_GPIO_Output.hex
  
 
-12:20:09 Build Finished. 0 errors, 0 warnings. (took 2s.851ms)
+23:12:22 Build Finished. 0 errors, 0 warnings. (took 1s.264ms)
 
