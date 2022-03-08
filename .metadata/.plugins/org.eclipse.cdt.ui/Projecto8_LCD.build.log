@@ -1,0 +1,23 @@
+12:07:22 **** Incremental Build of configuration Debug for project Projecto8_LCD ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto8_LCD/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto8_LCD/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto8_LCD.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto8_LCD\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto8_LCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto8_LCD.elf
+ 
+arm-none-eabi-size   Projecto8_LCD.elf 
+arm-none-eabi-objdump -h -S  Projecto8_LCD.elf  > "Projecto8_LCD.list"
+   text	   data	    bss	    dec	    hex	filename
+   5888	    108	   1604	   7600	   1db0	Projecto8_LCD.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto8_LCD.elf  "Projecto8_LCD.hex"
+Finished building: Projecto8_LCD.list
+ 
+arm-none-eabi-objcopy  -O binary  Projecto8_LCD.elf  "Projecto8_LCD.bin"
+Finished building: Projecto8_LCD.hex
+ 
+Finished building: Projecto8_LCD.bin
+ 
+
+12:07:25 Build Finished. 0 errors, 0 warnings. (took 2s.930ms)
+

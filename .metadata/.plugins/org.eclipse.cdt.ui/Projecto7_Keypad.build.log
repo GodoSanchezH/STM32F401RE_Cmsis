@@ -1,0 +1,9 @@
+12:31:45 **** Clean-only build of configuration Debug for project Projecto7_Keypad ****
+make -j2 clean 
+rm -rf ./Startup/startup_stm32f401xe.d ./Startup/startup_stm32f401xe.o
+rm -rf ./Core/Src/Clock_Config.d ./Core/Src/Clock_Config.o ./Core/Src/GPIO.d ./Core/Src/GPIO.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o
+rm -rf Projecto3_GPIO_Library.bin Projecto3_GPIO_Library.elf Projecto3_GPIO_Library.hex Projecto3_GPIO_Library.list default.size.stdout
+ 
+
+12:31:46 Build Finished. 0 errors, 0 warnings. (took 690ms)
+

@@ -1,0 +1,17 @@
+/*
+ * adc.c
+ *
+ *  Created on: 1 mar. 2022
+ *      Author: LENOVO
+ */
+
+#include "adc.h"
+
+void Adc_Stm32_Init(void){
+
+
+	//habilitamos el clock el adc
+	RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+
+
+}

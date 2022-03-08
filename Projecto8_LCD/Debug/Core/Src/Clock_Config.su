@@ -1,0 +1,2 @@
+Clock_Config.c:12:6:Init_Clock_HSE	4	static
+Clock_Config.c:69:6:Init_Clock_HSI	4	static

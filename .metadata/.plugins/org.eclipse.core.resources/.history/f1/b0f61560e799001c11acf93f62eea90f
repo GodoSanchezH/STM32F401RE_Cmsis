@@ -1,0 +1,71 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 16, 2022
+ *      Author: Godo Sanchez
+ */
+#include "main.h"
+#include "Clock_Config.h"
+#include "GPIO.h"
+#include "Timer.h"
+#include "LCD_STM32.h"
+
+#define DERECHA   1
+#define IZQUIERDA 0
+
+int  count = 0;
+bool flag=0;
+
+void ModoCorrimiento(bool modo);
+
+int main(void){
+
+ Init_Clock_HSI();
+ Timer_delay_Init(1600);
+ LCD_STM32_Init();
+ LCD_STM32_SetCursor(1, FILA1);
+ LCD_STM32_Print_String("Hola");
+ LCD_STM32_New_Char(1,0x0A,0x1F,0x1F,0x1F,0x0E,0x04,0x00,0x00);//Corazon
+for(;;){
+
+
+
+
+}
+	return 0;
+}
+
+void ModoCorrimiento(bool modo){
+    if(modo == IZQUIERDA){
+        for(uint8_t c=16; c>0; c--){
+        	LCD_STM32_SetCursor(c, FILA1);
+        	LCD_STM32_Print_String("Ximenita");
+        	LCD_STM32_Write_New_Char(1);
+            Timer_delay(300);
+            LCD_STM32_Clear();
+            LCD_STM32_Home();
+        }
+        for(uint8_t c=16; c>0; c--){
+            Lcd_Set_Cursor(2, c);
+            Lcd_Write_String("Andreita");
+            Write_New_Char(1);
+            __delay_ms(300);
+            Lcd_Clear();
+        }
+    }
+    if(modo == DERECHA){
+        for(uint8_t c=1; c<17; c++){
+            Lcd_Set_Cursor(1, c);
+            Lcd_Write_String("Curso PIC");
+            __delay_ms(200);
+            Lcd_Clear();
+        }
+        for(uint8_t c=1; c<17; c++){
+            Lcd_Set_Cursor(2, c);
+            Lcd_Write_String("Curso PIC");
+            __delay_ms(200);
+            Lcd_Clear();
+        }
+    }
+}
+

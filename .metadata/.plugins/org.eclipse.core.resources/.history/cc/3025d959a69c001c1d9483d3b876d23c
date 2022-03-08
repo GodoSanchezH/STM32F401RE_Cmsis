@@ -1,0 +1,41 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 16, 2022
+ *      Author: Godo Sanchez
+ */
+#include "main.h"
+#include "Clock_Config.h"
+#include "GPIO.h"
+#include "Timer.h"
+#include "LCD_STM32.h"
+
+#define DERECHA   1
+#define IZQUIERDA 0
+
+int  count = 0;
+bool flag=0;
+
+
+int main(void){
+
+ Init_Clock_HSI();
+ Timer_delay_Init(1600);
+ LCD_STM32_Init();
+
+
+
+for(;;){
+
+
+
+
+
+
+
+
+}
+	return 0;
+}
+
+

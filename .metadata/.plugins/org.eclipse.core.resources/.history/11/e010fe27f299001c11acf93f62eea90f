@@ -1,0 +1,220 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 16, 2022
+ *      Author: Godo Sanchez
+ */
+#include "main.h"
+#include "Clock_Config.h"
+#include "GPIO.h"
+#include "Timer.h"
+#include "LCD_STM32.h"
+
+#define DERECHA   1
+#define IZQUIERDA 0
+
+int  count = 0;
+bool flag=0;
+
+void ModoCorrimiento(bool modo);
+
+int main(void){
+
+ Init_Clock_HSI();
+ Timer_delay_Init(1600);
+ LCD_STM32_Init();
+
+
+    LCD_STM32_SetCursor(0, FILA1);
+ 	LCD_STM32_Print_String("Buenas Nochez");
+ 	Timer_delay(300);
+ 	LCD_STM32_SetCursor(0, FILA2);
+ 	LCD_STM32_Print_String("Señorita Xime");
+ 	Timer_delay(300);
+ 	LCD_STM32_Clear();
+ 	LCD_STM32_Home();
+
+
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("Queria decirte");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("unas palabras");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("hace algun");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("tiempo :(");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("algo rondaba");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("mi cabeza");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("y bueno hoy");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("reuni valor");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("para decirlo");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("señorita: ....");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("me llamas mucho");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("la atencion");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("y quisiera ser");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("mas q amigo");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("se que quizas");
+	Timer_delay(300);
+	LCD_STM32_SetCursor(0, FILA2);
+	LCD_STM32_Print_String("hablamos poco");
+	Timer_delay(300);
+	LCD_STM32_Clear();
+	LCD_STM32_Home();
+
+	LCD_STM32_SetCursor(0, FILA1);
+	LCD_STM32_Print_String("pero han sido");
+	Timer_delay(300);
+		LCD_STM32_SetCursor(0, FILA2);
+		LCD_STM32_Print_String("suficiente para");
+		Timer_delay(300);
+		LCD_STM32_Clear();
+		LCD_STM32_Home();
+
+		LCD_STM32_SetCursor(0, FILA1);
+		LCD_STM32_Print_String("darme cuenta");
+		Timer_delay(300);
+			LCD_STM32_SetCursor(0, FILA2);
+			LCD_STM32_Print_String("la maravillosa");
+			Timer_delay(300);
+			LCD_STM32_Clear();
+			LCD_STM32_Home();
+
+			LCD_STM32_SetCursor(0, FILA1);
+			LCD_STM32_Print_String("persona que");
+			Timer_delay(300);
+				LCD_STM32_SetCursor(0, FILA2);
+				LCD_STM32_Print_String("eres <3");
+				Timer_delay(300);
+				LCD_STM32_Clear();
+				LCD_STM32_Home();
+
+			LCD_STM32_SetCursor(0, FILA1);
+				LCD_STM32_Print_String("espero que");
+				Timer_delay(300);
+					LCD_STM32_SetCursor(0, FILA2);
+					LCD_STM32_Print_String("lo tomes  ");
+					Timer_delay(300);
+					LCD_STM32_Clear();
+					LCD_STM32_Home();
+
+					LCD_STM32_SetCursor(0, FILA1);
+					LCD_STM32_Print_String("en cuenta");
+					Timer_delay(300);
+					LCD_STM32_SetCursor(0, FILA2);
+					LCD_STM32_Print_String("sin mas q decir");
+					Timer_delay(300);
+					LCD_STM32_Clear();
+					LCD_STM32_Home();
+
+					LCD_STM32_SetCursor(0, FILA1);
+								LCD_STM32_Print_String("me despido");
+								Timer_delay(300);
+								LCD_STM32_SetCursor(0, FILA2);
+								LCD_STM32_Print_String("señorita <3");
+								Timer_delay(300);
+								LCD_STM32_Clear();
+								LCD_STM32_Home();
+
+				ModoCorrimiento(IZQUIERDA);///////////////////////
+for(;;){
+
+
+
+
+
+
+
+
+}
+	return 0;
+}
+
+void ModoCorrimiento(bool modo){
+    if(modo == IZQUIERDA){
+        for(uint8_t c=16; c>0; c--){
+        	LCD_STM32_SetCursor(c, FILA1);
+        	LCD_STM32_Print_String("Ximenita<3");
+            Timer_delay(300);
+            LCD_STM32_Clear();
+            LCD_STM32_Home();
+        }
+        for(uint8_t c=16; c>0; c--){
+           				LCD_STM32_SetCursor(c, FILA2);
+                    	LCD_STM32_Print_String("Ximenita");
+
+                        Timer_delay(300);
+                        LCD_STM32_Clear();
+                        LCD_STM32_Home();
+        }
+    }
+    if(modo == DERECHA){
+        for(uint8_t c=1; c<17; c++){
+        	LCD_STM32_SetCursor(c, FILA1);
+        	LCD_STM32_Print_String("Ximenita");
+        	LCD_STM32_Write_New_Char(1);
+            Timer_delay(300);
+            LCD_STM32_Clear();
+            LCD_STM32_Home();
+        }
+        for(uint8_t c=1; c<17; c++){
+			LCD_STM32_SetCursor(c, FILA2);
+        	LCD_STM32_Print_String("Ximenita");
+        	LCD_STM32_Write_New_Char(1);
+            Timer_delay(300);
+            LCD_STM32_Clear();
+            LCD_STM32_Home();
+        }
+    }
+}
+

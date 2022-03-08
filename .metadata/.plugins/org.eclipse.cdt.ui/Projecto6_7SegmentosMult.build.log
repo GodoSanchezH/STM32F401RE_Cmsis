@@ -1,0 +1,23 @@
+23:04:47 **** Incremental Build of configuration Debug for project Projecto6_7SegmentosMult ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto6_7SegmentosMult/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto6_7SegmentosMult/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto6_7SegmentosMult.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto6_7SegmentosMult\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto6_7SegmentosMult.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto6_7SegmentosMult.elf
+ 
+arm-none-eabi-size   Projecto6_7SegmentosMult.elf 
+arm-none-eabi-objdump -h -S  Projecto6_7SegmentosMult.elf  > "Projecto6_7SegmentosMult.list"
+   text	   data	    bss	    dec	    hex	filename
+   2768	     16	   1576	   4360	   1108	Projecto6_7SegmentosMult.elf
+Finished building: default.size.stdout
+Finished building: Projecto6_7SegmentosMult.list
+ 
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto6_7SegmentosMult.elf  "Projecto6_7SegmentosMult.hex"
+arm-none-eabi-objcopy  -O binary  Projecto6_7SegmentosMult.elf  "Projecto6_7SegmentosMult.bin"
+Finished building: Projecto6_7SegmentosMult.hex
+Finished building: Projecto6_7SegmentosMult.bin
+ 
+ 
+
+23:04:50 Build Finished. 0 errors, 0 warnings. (took 2s.920ms)
+

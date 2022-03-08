@@ -1,9 +1,10 @@
-21:06:41 **** Clean-only build of configuration Debug for project Projecto0_Plantilla ****
-make -j2 clean 
-rm -rf ./Startup/startup_stm32f401xe.d ./Startup/startup_stm32f401xe.o
-rm -rf ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o
-rm -rf Projecto0_Plantilla.bin Projecto0_Plantilla.elf Projecto0_Plantilla.hex Projecto0_Plantilla.list default.size.stdout
+01:19:10 **** Build of configuration Debug for project Projecto0_Plantilla ****
+make -j2 all 
+arm-none-eabi-size   Projecto0_Plantilla.elf 
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	Projecto0_Plantilla.elf
+Finished building: default.size.stdout
  
 
-21:06:42 Build Finished. 0 errors, 0 warnings. (took 1s.290ms)
+01:19:12 Build Finished. 0 errors, 0 warnings. (took 1s.331ms)
 

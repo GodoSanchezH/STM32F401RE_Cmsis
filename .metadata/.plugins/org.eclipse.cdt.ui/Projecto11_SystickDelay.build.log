@@ -1,0 +1,23 @@
+00:55:55 **** Incremental Build of configuration Debug for project Projecto11_SystickDelay ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/SysTick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto11_SystickDelay/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto11_SystickDelay/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/SysTick.d" -MT"Core/Src/SysTick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SysTick.o"
+arm-none-eabi-gcc -o "Projecto11_SystickDelay.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto11_SystickDelay\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto11_SystickDelay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto11_SystickDelay.elf
+ 
+arm-none-eabi-size   Projecto11_SystickDelay.elf 
+arm-none-eabi-objdump -h -S  Projecto11_SystickDelay.elf  > "Projecto11_SystickDelay.list"
+   text	   data	    bss	    dec	    hex	filename
+   1744	      8	   1568	   3320	    cf8	Projecto11_SystickDelay.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto11_SystickDelay.elf  "Projecto11_SystickDelay.hex"
+Finished building: Projecto11_SystickDelay.list
+ 
+arm-none-eabi-objcopy  -O binary  Projecto11_SystickDelay.elf  "Projecto11_SystickDelay.bin"
+Finished building: Projecto11_SystickDelay.hex
+ 
+Finished building: Projecto11_SystickDelay.bin
+ 
+
+00:56:01 Build Finished. 0 errors, 0 warnings. (took 6s.325ms)
+

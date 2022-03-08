@@ -1,0 +1,61 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 16, 2022
+ *      Author: Godo Sanchez
+ */
+#include "main.h"
+#include "Clock_Config.h"
+#include "GPIO.h"
+#include "Timer.h"
+#include "LCD_STM32.h"
+#include "adc.h"
+
+
+int  count = 0;
+bool flag=0;
+
+uint16_t adc_valor = 0;
+float voltaje = 0.0;
+char datos[16];
+uint16_t valor_pwm = 0;
+
+int main(void){
+
+ Init_Clock_HSI();
+ Timer_delay_Init(1600);
+ SysTick_Config(16000);
+ LCD_STM32_Init();
+ Adc_Stm32_Init();
+ PWM_Init();
+
+for(;;){
+	 ADC_START();
+			if(ADC_PollEndConversion(10))
+			{
+				adc_valor = AnalogRead();
+				voltaje = adc_valor*(50/4095);
+				sprintf(datos,"DutyCicle: %.2f%",voltaje);
+				LCD_STM32_SetCursor(0, FILA1);
+				LCD_STM32_Print_String(datos);
+				/*
+				 *  ADC -  PWM
+	 			 * 4095 -> 19999
+				 *  1   ->  x
+				 * */
+				valor_pwm = (uint16_t)(adc_valor*1599)/4095;
+				if(valor_pwm > 1600)
+				{
+					valor_pwm = 1599;
+				}
+				TIM1->CCR1 = valor_pwm;
+				ADC_STOP();
+			}
+			Timer_delay(100);
+
+
+
+}
+	return 0;
+}
+

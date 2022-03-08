@@ -1,0 +1,23 @@
+12:51:32 **** Incremental Build of configuration Debug for project Projecto13_ADC ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto13_ADC/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto13_ADC/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto13_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto13_ADC\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto13_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto13_ADC.elf
+ 
+arm-none-eabi-size   Projecto13_ADC.elf 
+arm-none-eabi-objdump -h -S  Projecto13_ADC.elf  > "Projecto13_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  26112	    476	   1620	  28208	   6e30	Projecto13_ADC.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto13_ADC.elf  "Projecto13_ADC.hex"
+Finished building: Projecto13_ADC.list
+ 
+arm-none-eabi-objcopy  -O binary  Projecto13_ADC.elf  "Projecto13_ADC.bin"
+Finished building: Projecto13_ADC.hex
+ 
+Finished building: Projecto13_ADC.bin
+ 
+
+12:51:42 Build Finished. 0 errors, 0 warnings. (took 9s.283ms)
+

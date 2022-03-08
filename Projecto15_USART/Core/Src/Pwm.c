@@ -1,0 +1,64 @@
+/*
+ * Pwm.c
+ *
+ *  Created on: 5 mar. 2022
+ *      Author: LENOVO
+ */
+
+
+#include "Pwm.h"
+
+void PWM_Init(void){
+
+	PWM_Gpio();
+	//habilitamos clokc del timer
+	// CLOCK PWM
+	RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
+	//contador ascendente
+	TIM1->CR1 &= ~(TIM_CR1_DIR);
+	// ALINEACIÓN IZQUIERDA
+	TIM1->CR1 &= ~(TIM_CR1_CMS);
+	TIM1->CR1|= TIM_CR1_CMS_1;
+	// CLOCK DIVISION
+	TIM1->CR1 &= ~(TIM_CR1_CKD);
+
+	/*FRECUNCIA DE 10KHZ*/
+	// PRESCALER
+	TIM1->PSC = 0;
+	// FPWM = 50Hz -> 20000
+	TIM1->ARR = 1600-1;
+	// MOE ENABLE
+	TIM1->BDTR |= TIM_BDTR_MOE;
+	// CANAL UNO HABILITADO
+	TIM1->CCER |= TIM_CCER_CC1E;
+	// SALIDA
+	TIM1->CCMR1 &= ~(TIM_CCMR1_CC1S);
+	// PWM SELECCIONADO
+	TIM1->CCMR1 |= (TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1);
+	// DUTY CYCLE 50%
+	TIM1->CCR1 = 800;
+	// ENABLE TIM1
+	TIM1->CR1 |= TIM_CR1_CEN;
+
+
+
+
+}
+void PWM_Gpio(void){
+
+RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;//habiltamos el clok a
+GPIOA->MODER &= ~(GPIO_MODER_MODER8);
+GPIOA->MODER |= GPIO_MODER_MODER8_1; //funcion alternativa
+
+    // GPIO CONFIG
+	// PUSH PULL
+	GPIOA->OTYPER &= ~(GPIO_OTYPER_OT8);
+	// LOW SPEED
+	GPIOA->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR8);
+	// NO PULL UP - PULL DOWN
+	GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPD8);
+//PA8 -> H
+GPIOA->AFR[1] &= ~GPIO_AFRH_AFSEL8;
+GPIOA->AFR[1] |= GPIO_AFRH_AFSEL8_0;
+
+}

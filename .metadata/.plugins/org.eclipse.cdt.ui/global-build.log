@@ -1,67 +1,121 @@
-14:11:38 **** Incremental Build of configuration Debug for project Projecto3_GPIO_Library ****
+18:11:05 **** Incremental Build of configuration Debug for project Projecto14_PWM ****
 make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto3_GPIO_Library/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto3_GPIO_Library/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Projecto3_GPIO_Library.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto3_GPIO_Library\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto3_GPIO_Library.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Projecto3_GPIO_Library.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto14_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto14_PWM\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto14_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto14_PWM.elf
  
-arm-none-eabi-size   Projecto3_GPIO_Library.elf 
-arm-none-eabi-objdump -h -S  Projecto3_GPIO_Library.elf  > "Projecto3_GPIO_Library.list"
+arm-none-eabi-size   Projecto14_PWM.elf 
+arm-none-eabi-objdump -h -S  Projecto14_PWM.elf  > "Projecto14_PWM.list"
    text	   data	    bss	    dec	    hex	filename
-   1784	      8	   1568	   3360	    d20	Projecto3_GPIO_Library.elf
+  26240	    476	   1628	  28344	   6eb8	Projecto14_PWM.elf
+Finished building: default.size.stdout
+Finished building: Projecto14_PWM.list
+ 
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto14_PWM.elf  "Projecto14_PWM.hex"
+arm-none-eabi-objcopy  -O binary  Projecto14_PWM.elf  "Projecto14_PWM.bin"
+Finished building: Projecto14_PWM.bin
+Finished building: Projecto14_PWM.hex
+ 
+ 
+18:11:31 **** Incremental Build of configuration Debug for project Projecto14_PWM ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto14_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto14_PWM\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto14_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto14_PWM.elf
+ 
+arm-none-eabi-size   Projecto14_PWM.elf 
+arm-none-eabi-objdump -h -S  Projecto14_PWM.elf  > "Projecto14_PWM.list"
+   text	   data	    bss	    dec	    hex	filename
+  26240	    476	   1628	  28344	   6eb8	Projecto14_PWM.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objcopy  -O ihex  Projecto3_GPIO_Library.elf  "Projecto3_GPIO_Library.hex"
-Finished building: Projecto3_GPIO_Library.list
+arm-none-eabi-objcopy  -O ihex  Projecto14_PWM.elf  "Projecto14_PWM.hex"
+Finished building: Projecto14_PWM.list
  
-arm-none-eabi-objcopy  -O binary  Projecto3_GPIO_Library.elf  "Projecto3_GPIO_Library.bin"
-Finished building: Projecto3_GPIO_Library.hex
-Finished building: Projecto3_GPIO_Library.bin
+arm-none-eabi-objcopy  -O binary  Projecto14_PWM.elf  "Projecto14_PWM.bin"
+Finished building: Projecto14_PWM.hex
  
+Finished building: Projecto14_PWM.bin
  
-14:11:46 **** Incremental Build of configuration Debug for project Projecto3_GPIO_Library ****
+18:12:40 **** Incremental Build of configuration Debug for project Projecto14_PWM ****
 make -j2 all 
-arm-none-eabi-size   Projecto3_GPIO_Library.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto14_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto14_PWM\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto14_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto14_PWM.elf
+ 
+arm-none-eabi-size   Projecto14_PWM.elf 
+arm-none-eabi-objdump -h -S  Projecto14_PWM.elf  > "Projecto14_PWM.list"
    text	   data	    bss	    dec	    hex	filename
-   1784	      8	   1568	   3360	    d20	Projecto3_GPIO_Library.elf
+  26288	    476	   1628	  28392	   6ee8	Projecto14_PWM.elf
 Finished building: default.size.stdout
  
-14:16:57 **** Incremental Build of configuration Debug for project Projecto3_GPIO_Library ****
-make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto3_GPIO_Library/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto3_GPIO_Library/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Projecto3_GPIO_Library.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto3_GPIO_Library\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto3_GPIO_Library.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Projecto3_GPIO_Library.elf
+arm-none-eabi-objcopy  -O ihex  Projecto14_PWM.elf  "Projecto14_PWM.hex"
+Finished building: Projecto14_PWM.list
  
-arm-none-eabi-size   Projecto3_GPIO_Library.elf 
-arm-none-eabi-objdump -h -S  Projecto3_GPIO_Library.elf  > "Projecto3_GPIO_Library.list"
+arm-none-eabi-objcopy  -O binary  Projecto14_PWM.elf  "Projecto14_PWM.bin"
+Finished building: Projecto14_PWM.hex
+ 
+Finished building: Projecto14_PWM.bin
+ 
+18:13:41 **** Incremental Build of configuration Debug for project Projecto14_PWM ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto14_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto14_PWM\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto14_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto14_PWM.elf
+ 
+arm-none-eabi-size   Projecto14_PWM.elf 
+arm-none-eabi-objdump -h -S  Projecto14_PWM.elf  > "Projecto14_PWM.list"
    text	   data	    bss	    dec	    hex	filename
-   1912	      8	   1568	   3488	    da0	Projecto3_GPIO_Library.elf
+  25560	    476	   1596	  27632	   6bf0	Projecto14_PWM.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objcopy  -O ihex  Projecto3_GPIO_Library.elf  "Projecto3_GPIO_Library.hex"
-Finished building: Projecto3_GPIO_Library.list
+arm-none-eabi-objcopy  -O ihex  Projecto14_PWM.elf  "Projecto14_PWM.hex"
+Finished building: Projecto14_PWM.list
  
-arm-none-eabi-objcopy  -O binary  Projecto3_GPIO_Library.elf  "Projecto3_GPIO_Library.bin"
-Finished building: Projecto3_GPIO_Library.hex
+arm-none-eabi-objcopy  -O binary  Projecto14_PWM.elf  "Projecto14_PWM.bin"
+Finished building: Projecto14_PWM.hex
  
-Finished building: Projecto3_GPIO_Library.bin
+Finished building: Projecto14_PWM.bin
  
-14:19:03 **** Incremental Build of configuration Debug for project Projecto3_GPIO_Library ****
+18:14:34 **** Incremental Build of configuration Debug for project Projecto14_PWM ****
 make -j2 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto3_GPIO_Library/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto3_GPIO_Library/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Projecto3_GPIO_Library.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto3_GPIO_Library\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto3_GPIO_Library.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Projecto3_GPIO_Library.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto14_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto14_PWM\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto14_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto14_PWM.elf
  
-arm-none-eabi-size   Projecto3_GPIO_Library.elf 
-arm-none-eabi-objdump -h -S  Projecto3_GPIO_Library.elf  > "Projecto3_GPIO_Library.list"
+arm-none-eabi-size   Projecto14_PWM.elf 
+arm-none-eabi-objdump -h -S  Projecto14_PWM.elf  > "Projecto14_PWM.list"
    text	   data	    bss	    dec	    hex	filename
-   1936	      8	   1568	   3512	    db8	Projecto3_GPIO_Library.elf
+  26288	    476	   1628	  28392	   6ee8	Projecto14_PWM.elf
 Finished building: default.size.stdout
  
-arm-none-eabi-objcopy  -O ihex  Projecto3_GPIO_Library.elf  "Projecto3_GPIO_Library.hex"
-Finished building: Projecto3_GPIO_Library.list
+Finished building: Projecto14_PWM.list
+arm-none-eabi-objcopy  -O ihex  Projecto14_PWM.elf  "Projecto14_PWM.hex"
  
-arm-none-eabi-objcopy  -O binary  Projecto3_GPIO_Library.elf  "Projecto3_GPIO_Library.bin"
-Finished building: Projecto3_GPIO_Library.hex
-Finished building: Projecto3_GPIO_Library.bin
+arm-none-eabi-objcopy  -O binary  Projecto14_PWM.elf  "Projecto14_PWM.bin"
+Finished building: Projecto14_PWM.hex
+Finished building: Projecto14_PWM.bin
+ 
+ 
+18:17:54 **** Incremental Build of configuration Debug for project Projecto14_PWM ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/Pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Pwm.d" -MT"Core/Src/Pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Pwm.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto14_PWM/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Projecto14_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto14_PWM\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto14_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto14_PWM.elf
+ 
+arm-none-eabi-size   Projecto14_PWM.elf 
+arm-none-eabi-objdump -h -S  Projecto14_PWM.elf  > "Projecto14_PWM.list"
+   text	   data	    bss	    dec	    hex	filename
+  26296	    476	   1628	  28400	   6ef0	Projecto14_PWM.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto14_PWM.elf  "Projecto14_PWM.hex"
+Finished building: Projecto14_PWM.list
+ 
+arm-none-eabi-objcopy  -O binary  Projecto14_PWM.elf  "Projecto14_PWM.bin"
+Finished building: Projecto14_PWM.hex
+Finished building: Projecto14_PWM.bin
  
  

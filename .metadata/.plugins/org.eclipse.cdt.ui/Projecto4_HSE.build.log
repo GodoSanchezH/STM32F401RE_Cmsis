@@ -1,0 +1,10 @@
+15:32:36 **** Incremental Build of configuration Debug for project Projecto4_HSE ****
+make -j2 all 
+arm-none-eabi-size   Projecto4_HSE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1760	      8	   1568	   3336	    d08	Projecto4_HSE.elf
+Finished building: default.size.stdout
+ 
+
+15:32:37 Build Finished. 0 errors, 0 warnings. (took 623ms)
+

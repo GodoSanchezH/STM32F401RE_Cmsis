@@ -1,0 +1,3 @@
+Display.c:11:6:Display7Seg_Init	24	static
+Display.c:32:6:Write_Display7Seg	32	static
+Display.c:79:6:Reset_Display7Seg	8	static

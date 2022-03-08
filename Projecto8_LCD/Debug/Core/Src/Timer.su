@@ -1,0 +1,7 @@
+core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+core_cm4.h:1777:22:__NVIC_ClearPendingIRQ	16	static
+core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+Timer.c:11:6:Timer_delay_Init	16	static
+Timer.c:30:6:Timer_delay	16	static
+Timer.c:52:6:Timer_Periodit_Init	16	static
+Timer.c:80:6:TIM2_IRQHandler	8	static

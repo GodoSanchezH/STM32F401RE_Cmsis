@@ -1,0 +1,77 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 16, 2022
+ *      Author: Godo Sanchez
+ */
+#include "main.h"
+#include "Clock_Config.h"
+#include "GPIO.h"
+#include "Timer.h"
+#include "LCD_STM32.h"
+#include "adc.h"
+
+#define DERECHA   1
+#define IZQUIERDA 0
+
+#define ADC_SOFTWARE 0
+//#define ADC_NVIC 1
+
+int  count = 0;
+bool flag=0;
+
+uint16_t adc_valor = 0;
+float voltaje = 0.0;
+char datos[16];
+
+
+int main(void){
+
+ Init_Clock_HSI();
+ Timer_delay_Init(1600);
+ SysTick_Config(16000);
+ LCD_STM32_Init();
+ Adc_Stm32_Init();
+ ADC_EnableNVIC();
+
+for(;;){
+
+
+	  /*ADC_START();
+	  if(ADC_PollEndConversion(5) == 1)
+			{
+				adc_valor = AnalogRead();
+				voltaje = adc_valor*(3.6/4095);
+  			    ADC_STOP();
+				sprintf(datos,"Vol: %.2f",voltaje);
+				LCD_STM32_SetCursor(0, FILA1);
+				LCD_STM32_Print_String(datos);
+		}
+	Timer_delay(100);*/
+
+
+	if(flag == 1)
+	{
+		voltaje = adc_valor*(3.6/4095);
+		sprintf(datos,"Vol nvic: %.2f",voltaje);
+		LCD_STM32_SetCursor(0, FILA1);
+		LCD_STM32_Print_String(datos);
+		flag=0;
+		ADC_START();
+	}
+
+
+
+
+}
+	return 0;
+}
+
+
+void ADC_IRQHandler(void)
+{
+	NVIC_ClearPendingIRQ(ADC_IRQn);
+	ADC1->SR &= ADC_SR_EOC;// limpiar flag
+	adc_valor = AnalogRead();
+	flag = 1;
+}

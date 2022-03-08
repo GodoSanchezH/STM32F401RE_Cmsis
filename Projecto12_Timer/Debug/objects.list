@@ -1,0 +1,8 @@
+"./Core/Src/Clock_Config.o"
+"./Core/Src/Display.o"
+"./Core/Src/ExtInt.o"
+"./Core/Src/GPIO.o"
+"./Core/Src/Timer.o"
+"./Core/Src/main.o"
+"./Core/Src/system_stm32f4xx.o"
+"./Startup/startup_stm32f401xe.o"

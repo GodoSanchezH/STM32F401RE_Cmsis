@@ -1,0 +1,23 @@
+14:37:06 **** Incremental Build of configuration Debug for project Projecto10_Encoder ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/ExtInt.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F401xE -c -I"E:/github/STM32F401RE_Cmsis/Projecto10_Encoder/Core/Inc" -I"E:/github/STM32F401RE_Cmsis/Projecto10_Encoder/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ExtInt.d" -MT"Core/Src/ExtInt.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ExtInt.o"
+arm-none-eabi-gcc -o "Projecto10_Encoder.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\github\STM32F401RE_Cmsis\Projecto10_Encoder\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projecto10_Encoder.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projecto10_Encoder.elf
+ 
+arm-none-eabi-size   Projecto10_Encoder.elf 
+arm-none-eabi-objdump -h -S  Projecto10_Encoder.elf  > "Projecto10_Encoder.list"
+   text	   data	    bss	    dec	    hex	filename
+   6336	    108	   1628	   8072	   1f88	Projecto10_Encoder.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy  -O ihex  Projecto10_Encoder.elf  "Projecto10_Encoder.hex"
+Finished building: Projecto10_Encoder.list
+ 
+Finished building: Projecto10_Encoder.hex
+arm-none-eabi-objcopy  -O binary  Projecto10_Encoder.elf  "Projecto10_Encoder.bin"
+ 
+Finished building: Projecto10_Encoder.bin
+ 
+
+14:37:09 Build Finished. 0 errors, 0 warnings. (took 2s.417ms)
+

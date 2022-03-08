@@ -1,0 +1,46 @@
+/*
+ * Pwm.c
+ *
+ *  Created on: 5 mar. 2022
+ *      Author: LENOVO
+ */
+
+
+#include "Pwm.h"
+
+void PWM_Init(void){
+
+	PWM_Gpio();
+	//habilitamos clokc del timer
+	// CLOCK PWM
+	RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
+
+	//contador ascendente
+	TIM1->CR1 &= ~(TIM_CR1_DIR);
+	// ALINEACIÓN IZQUIERDA
+	TIM1->CR1 &= ~(TIM_CR1_CMS);
+	// CLOCK DIVISION
+	TIM1->CR1 &= ~(TIM_CR1_CKD);
+
+
+
+
+}
+void PWM_Gpio(void){
+
+RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;//habiltamos el clok a
+GPIOA->MODER &= ~(GPIO_MODER_MODER8);
+GPIOA->MODER |= GPIO_MODER_MODER8_1; //funcion alternativa
+
+    // GPIO CONFIG
+	// PUSH PULL
+	GPIOA->OTYPER &= ~(GPIO_OTYPER_OT8);
+	// LOW SPEED
+	GPIOA->OSPEEDR &= ~(GPIO_OSPEEDER_OSPEEDR8);
+	// NO PULL UP - PULL DOWN
+	GPIOA->PUPDR &= ~(GPIO_PUPDR_PUPD8);
+//PA8 -> H
+GPIOA->AFR[1] &= ~GPIO_AFRH_AFSEL8;
+GPIOA->AFR[1] |= GPIO_AFRH_AFSEL8_0;
+
+}

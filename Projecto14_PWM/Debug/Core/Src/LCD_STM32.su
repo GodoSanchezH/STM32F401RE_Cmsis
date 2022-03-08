@@ -1,0 +1,10 @@
+LCD_STM32.c:14:6:LCD_STM32_DataBus	16	static
+LCD_STM32.c:29:6:LCD_STM32_Cmd	16	static
+LCD_STM32.c:36:6:LCD_STM32_Init	16	static
+LCD_STM32.c:59:6:LCD_STM32_SetCursor	24	static
+LCD_STM32.c:89:6:LCD_STM32_Print_Char	24	static
+LCD_STM32.c:97:6:LCD_STM32_Print_String	24	static
+LCD_STM32.c:103:6:LCD_STM32_Clear	8	static
+LCD_STM32.c:108:6:LCD_STM32_Home	8	static
+LCD_STM32.c:113:6:LCD_STM32_New_Char	32	static
+LCD_STM32.c:246:6:LCD_STM32_Write_New_Char	16	static

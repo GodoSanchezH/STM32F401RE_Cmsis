@@ -1,0 +1,21 @@
+/*
+ * adc.c
+ *
+ *  Created on: 1 mar. 2022
+ *      Author: LENOVO
+ */
+
+#include "adc.h"
+
+void Adc_Stm32_Init(void){
+
+
+	//habilitamos el clock el adc
+	RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+	//gpio A0
+	RCC-> AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+	GPIOA->MODER |= GPIO_MODER_MODE0;
+
+
+
+}

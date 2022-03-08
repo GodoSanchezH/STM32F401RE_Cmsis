@@ -1,0 +1,10 @@
+core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+core_cm4.h:1724:22:__NVIC_DisableIRQ	16	static,ignoring_inline_asm
+core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+adc.c:11:6:Adc_Stm32_Init	8	static
+adc.c:43:6:ADC_START	4	static
+adc.c:50:6:ADC_STOP	4	static
+adc.c:56:10:AnalogRead	4	static
+adc.c:63:6:ADC_PollEndConversion	24	static
+adc.c:77:6:ADC_EnableNVIC	8	static
+adc.c:84:6:ADC_DisableNVIC	8	static

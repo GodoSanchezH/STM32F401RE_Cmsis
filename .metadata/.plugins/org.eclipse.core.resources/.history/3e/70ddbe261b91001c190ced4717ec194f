@@ -1,0 +1,122 @@
+/*
+ * Display.c
+ *
+ *  Created on: 18 feb. 2022
+ *      Author: LENOVO
+ */
+
+#include "Display.h"
+
+
+void Display7Seg_Init(Display7Seg *Display) //Inicializacion de un solo Display
+{
+	//configuramos las salidas del display
+	GPIO_Init(PA, Display->a,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PA, Display->b,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display->c,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display->d,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display->e,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display->f,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PA, Display->g,Output,OUT2,No_pull_up_pull_down);
+
+}
+
+void Write_Display7Seg(Display7Seg *Display,uint8_t val){
+
+	const uint8_t Display_7Seg_C[] = {0X3F , 0X06 , 0X5B, 0X4F, 0X66, 0X6D, 0X7D, 0X07, 0X7F, 0X67 };//{0XC0,0XF9,0XA4,0XB0,0X99,0X92,0X82,0XF8,0X80,0X90};
+	uint8_t dato = Display_7Seg_C[val];
+
+	// Limpiamos el display;
+	Reset_Display7Seg();
+
+	//Enviamos la data;
+
+  if(dato & 0x1)                //a
+    GPIOA->ODR |= 1U<<Display->a;
+  if(dato & 1U<<1)              //b
+	GPIOA->ODR |= 1U<<Display->b;
+  if(dato & 1U<<2)              //c
+	GPIOB->ODR |= 1U<<Display->c;
+  if(dato & 1U<<3)              //d
+	GPIOB->ODR |= 1U<<Display->d;
+  if(dato & 1U<<4)              //e
+	GPIOB->ODR |= 1U<<Display->e;
+  if(dato & 1u<<5)              //f
+	GPIOB->ODR |= 1U<<Display->f;
+  if(dato & 1u<<6)              //g
+	GPIOA->ODR |= 1U<<Display->g;
+
+  return;
+}
+
+void Reset_Display7Seg(void){
+	 	 	Write_GPIO(PA, 9, LOW); ///PRENDIO
+			Write_GPIO(PA, 8, LOW);//PRENDIO
+			Write_GPIO(PA, 10, LOW);//PRENDIO
+			Write_GPIO(PB, 3, LOW);//PRENDIO
+			Write_GPIO(PB, 4, LOW);//PRENDIO
+		    Write_GPIO(PB, 5, LOW);//PRENDIO
+			Write_GPIO(PB, 10, LOW);//PRENDIO
+}
+
+
+void Display7Seg_Mul_Init(Display7Seg *Display_Mul) //Inicializaciond de un dislay multiplexado
+{
+
+	//configuramos las salidas del display
+	GPIO_Init(PA, Display_Mul->a,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PA, Display_Mul->b,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display_Mul->c,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display_Mul->d,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display_Mul->e,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, Display_Mul->f,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PA, Display_Mul->g,Output,OUT2,No_pull_up_pull_down);
+
+	//Multiplexacion
+	GPIO_Init(PC, 0,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PC, 1,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PB, 0,Output,OUT2,No_pull_up_pull_down);
+	GPIO_Init(PA, 4,Output,OUT2,No_pull_up_pull_down);
+
+
+}
+
+void Write_Display7Seg_Mul(Display7Seg *Display_Mul,DisplayMul NumDisplay,uint8_t val) {
+
+	const uint8_t Display_7Seg_C[] = {0X3F , 0X06 , 0X5B, 0X4F, 0X66, 0X6D, 0X7D, 0X07, 0X7F, 0X67 };//{0XC0,0XF9,0XA4,0XB0,0X99,0X92,0X82,0XF8,0X80,0X90};
+		uint8_t dato = Display_7Seg_C[val];
+
+		// Limpiamos el display;
+		Reset_Display7Seg();
+
+		//Enviamos la data;
+
+	  if(dato & 0x1)                //a
+	    GPIOA->ODR |= 1U<<Display_Mul->a;
+	  if(dato & 1U<<1)              //b
+		GPIOA->ODR |= 1U<<Display_Mul->b;
+	  if(dato & 1U<<2)              //c
+		GPIOB->ODR |= 1U<<Display_Mul->c;
+	  if(dato & 1U<<3)              //d
+		GPIOB->ODR |= 1U<<Display_Mul->d;
+	  if(dato & 1U<<4)              //e
+		GPIOB->ODR |= 1U<<Display_Mul->e;
+	  if(dato & 1u<<5)              //f
+		GPIOB->ODR |= 1U<<Display_Mul->f;
+	  if(dato & 1u<<6)              //g
+		GPIOA->ODR |= 1U<<Display_Mul->g;
+
+	  /*Multiplexacion*/
+	  if(NumDisplay == Dis_1)
+	    GPIOC->ODR |= 1<<0;
+	  else if(NumDisplay == Dis_2)
+		GPIOC->ODR |= 1<<1;
+	  else if(NumDisplay == Dis_3)
+		GPIOB->ODR |= 1<<0;
+	  else if(NumDisplay == Dis_4)
+		GPIOA->ODR |= 1U<<4;
+
+	  return;
+
+
+}

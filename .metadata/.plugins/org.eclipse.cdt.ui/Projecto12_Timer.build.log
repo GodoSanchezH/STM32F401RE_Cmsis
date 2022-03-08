@@ -1,0 +1,10 @@
+19:01:18 **** Incremental Build of configuration Debug for project Projecto12_Timer ****
+make -j2 all 
+arm-none-eabi-size   Projecto12_Timer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2432	      8	   1568	   4008	    fa8	Projecto12_Timer.elf
+Finished building: default.size.stdout
+ 
+
+19:01:19 Build Finished. 0 errors, 0 warnings. (took 667ms)
+
